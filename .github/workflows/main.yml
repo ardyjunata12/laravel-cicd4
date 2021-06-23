@@ -17,17 +17,18 @@ jobs:
           DB_DATABASE: ${{ secrets.DB_DATABASE }}
           DB_USERNAME: ${{ secrets.DB_USERNAME }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-      - name: Install Dependencies
-        run: composer update
-      - name: Generate key
-        run: php artisan key:generate
-      - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with:
-          server: ${{ secrets.FTP_SITE_SERVER }}
-          username: ${{ secrets.FTP_STAFF_USERNAME }}
-          password: ${{ secrets.FTP_STAFF_PASSWORD }}
-          exclude: .git*
-            - .git*/**
-            - .vscode/**
-            - **/.github/**
+      - run: cat .env
+      # - name: Install Dependencies
+      #   run: composer update
+      # - name: Generate key
+      #   run: php artisan key:generate
+      # - name: Sync files
+      #   uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      #   with:
+      #     server: ${{ secrets.FTP_SITE_SERVER }}
+      #     username: ${{ secrets.FTP_STAFF_USERNAME }}
+      #     password: ${{ secrets.FTP_STAFF_PASSWORD }}
+      #     exclude: .git*
+      #       - .git*/**
+      #       - .vscode/**
+      #       - **/.github/**
