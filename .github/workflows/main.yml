@@ -14,7 +14,7 @@ jobs:
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       - run: cat db > .env
-      - run: .env
+      - run: cat .env
       # - name: Install Dependencies
       #   run: composer update
       # - name: Generate key
