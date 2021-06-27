@@ -14,7 +14,7 @@ jobs:
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       - name: Declare DB to .env
-        run: echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env ||echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env || echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+        run: echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env ; echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env ; echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
       - name: Install Dependencies
         run: composer update
       - name: Generate key
