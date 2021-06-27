@@ -13,6 +13,7 @@
   <body>
   <div class="container">
   <h1 class="mt-3">Users Active</h1>
+    <a class="btn btn-md btn-primary">Tambah</a>
     <div class="row">
         <div class="col-md-6">
             <table class="table">
